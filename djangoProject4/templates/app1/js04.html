@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () { // = document.ready()
+            $('#b1').click(function () {
+                uservalue=$('#userId').val() // = document.getElementById('userId')
+                console.log(uservalue + '님 환영합니다.')
+                if (uservalue.length >= 4) {
+                    location.href='https://www.naver.com/'
+                } else {
+                    alert('경고')
+                    $('#userId').val('')
+                }
+
+                // 4글자 이상이 아니면 경고창을 띄워주세요
+                // 입력한값 제거
+                // 4글자 이상이면 네이버로 넘겨주세요
+            })
+            $('#b2').click(function () {
+                uservalue2=$('#n1').val()
+                uservalue3=$('#n2').val()
+                resultvalue=parseInt(uservalue2)+parseInt(uservalue3)
+                console.log(resultvalue + '이게되네')
+                $('div').html('두수의 합은' +resultvalue )
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+<input name="userId" id="userId" value="root"><br>
+<button id="b1">아이디 제출 버튼</button>
+<hr>
+숫자1 : <input name="n1" id="n1" value=""><br>
+숫자2 : <input name="n2" id="n2" value=""><br>
+<button id="b2">두 수의 합</button>
+<hr color="lime">
+<div style="color: crimson"></div>
+</body>
+</html>

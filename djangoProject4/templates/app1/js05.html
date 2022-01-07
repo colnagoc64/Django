@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function () { // = document.ready()
+            $('#b1').click(function () {
+                wantsite=$('#site').val() // = document.getElementById('userId')
+                console.log(wantsite)
+                if (wantsite == 'naver') {
+                    location.href='https://www.naver.com/'
+                } else if (wantsite == 'daum'){
+                    location.href = 'https://www.daum.net/'
+                } else if (wantsite == 'google'){
+                    location.href = 'https://www.google.com/'
+                } else {
+                    $('#div1').html('다시입력해주세요')
+                    $('#site').val('')
+                }
+            })
+            $('#b2').click(function () {
+                value=$('#n1').val()
+                value2=$('#n2').val()
+                add=parseInt(value)+parseInt(value2)
+                $('#div2').html('결과값은' + add )
+            })
+            $('#b3').click(function () {
+                value=$('#n1').val()
+                value2=$('#n2').val()
+                sub=parseInt(value)-parseInt(value2)
+                $('#div2').html('결과값은' + sub )
+            })
+             $('#b4').click(function () {
+                value=$('#n1').val()
+                value2=$('#n2').val()
+                mult=parseInt(value)*parseInt(value2)
+                $('#div2').html('결과값은' + mult )
+            })
+            $('#b5').click(function () {
+                value=$('#n1').val()
+                value2=$('#n2').val()
+                divi=parseInt(value)/parseInt(value2)
+                $('#div2').html('결과값은' + divi )
+            })
+             $('#b6').click(function () {
+                user=$('#user').val()
+                pw=$('#pw').val()
+                if (user != 'root'){
+                    $('#div3').html('없는아이디입니다.')
+                    $('#user').val('')
+                    $('#pw').val('')
+                } else if (pw !='1234'){
+                    $('#div3').html('비밀번호가 맞지않습니다.')
+                    $('#user').val('')
+                    $('#pw').val('')
+                 } else {
+                    $('#div3').html('<span style=color:blue>로그인되었습니다.</span>')
+                    $('#user').val('')
+                    $('#pw').val('')
+                }
+            })
+        })
+
+
+    </script>
+</head>
+<body>
+<hr>
+가고 싶은 사이트(naver,daum,google)<br><input id="site" value=""><br>
+<button id="b1">원하는 사이트로 이동</button>
+<hr color="red">
+<div style="color: red" id="div1"></div>
+<hr>
+숫자1 : <input id="n1" value=""><br>
+숫자2 : <input id="n2" value=""><br>
+<button id="b2">더하기</button>
+<button id="b3">빼기</button>
+<button id="b4">곱하기</button>
+<button id="b5">나누기</button>
+<hr color="red">
+<div2 style="color: red" id="div2"></div2>
+<hr>
+아이디 : <input id="user" value=""><br>
+비밀번호 : <input id="pw" value=""><br>
+<button id="b6">로그인하기</button>
+<hr color="red">
+<div style="color: red" id="div3"></div>
+
+</body>
+</html>

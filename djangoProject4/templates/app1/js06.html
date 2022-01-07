@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'out.css' %}">
+    <script type="text/javascript" src = '{% static 'out.js' %}'></script>
+    <script type="text/javascript" src = '{% static 'jquery-3.6.0.js' %}'></script>
+    <script type="text/javascript">
+        $(function () {
+            alert('jquery link 성공.!!! ')
+            $('button').click(function () {
+                $.ajax({
+                    url : "http://127.0.0.1:8000",
+                    success : function () {
+                        alert('ajax통신 성공.!!! ')
+
+                    },
+                    error :function () {
+                        alert('ajax실패 성공.!!! ')
+                    }
+                })
+            })
+    })</script>
+
+</head>
+<body>
+<hr>
+<img src = '{% static 'mu.png' %}' width="200" height="200">
+<br>
+<button>AJAX Test</button>
+</body>
+</html>
